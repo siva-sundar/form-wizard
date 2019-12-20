@@ -1,0 +1,15 @@
+{{#if currentStep.isPersonalDetailsForm}}
+  {{personal-details-form
+    model=model
+    proceedToNextStep=(action 'proceedToNextStep' 'location-details')
+  }}
+{{else if currentStep.isLocationDetailsForm}}
+  {{location-form
+    model=model
+    proceedToNextStep=(action 'proceedToNextStep' 'education-details')
+  }}
+{{else if currentStep.isEducationDetailsForm}}
+  {{education-details-form
+    model=model
+  }}
+{{/if}}
